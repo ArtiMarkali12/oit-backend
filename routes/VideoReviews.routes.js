@@ -5,13 +5,9 @@ const {
   addVideo,
   getVideos,
   deleteVideo,
-  getPublicVideos,
 } = require("../controllers/VideoReviews.controller");
 
 const authMiddleware = require("../middlewares/auth.middleware");
-
-// 🌍 PUBLIC (NO TOKEN)
-router.get("/public/:domain", getPublicVideos);
 
 // 🔐 ADMIN
 router.post("/", authMiddleware, addVideo);

@@ -78,21 +78,3 @@ exports.deleteVideo = async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 };
-
-/* ================= GET PUBLIC VIDEOS ================= */
-// 🌍 PUBLIC
-exports.getPublicVideos = async (req, res) => {
-  try {
-    const domain = req.params.domain; // URL param
-    if (!domain) return res.status(400).json({ message: "Domain is required" });
-
-    const videos = await VideoReview.find({ domain }).sort({ createdAt: -1 });
-
-    res.json({
-      success: true,
-      data: videos,
-    });
-  } catch (err) {
-    res.status(500).json({ message: err.message });
-  }
-};
