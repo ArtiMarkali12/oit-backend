@@ -17,6 +17,8 @@ const textReviewRoutes = require("./routes/TextReviews.routes");
 
 
 
+
+
 const videoReviewRoutes = require("./routes/VideoReviews.routes");
 
 
@@ -44,6 +46,7 @@ app.use("/api/applied", appliedRoutes);
 
 app.use("/api/video-reviews", videoReviewRoutes);
 app.use("/api/text-reviews", textReviewRoutes);
+
 
 
 
